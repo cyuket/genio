@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:geniopay/app/shared/fonts.dart';
+
+class NoteText extends StatelessWidget {
+  const NoteText(
+    this.text, {
+    this.textAlign = TextAlign.left,
+    this.color,
+    Key? key,
+  }) : super(key: key);
+
+  final String text;
+  final TextAlign textAlign;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextRegular(
+      text,
+      textAlign: textAlign,
+      style: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+        color: color ?? Colors.grey[600],
+      ),
+    );
+  }
+}
