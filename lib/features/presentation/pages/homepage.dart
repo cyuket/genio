@@ -7,6 +7,7 @@ import 'package:geniopay/app/shared/asset.dart';
 import 'package:geniopay/app/shared/colors.dart';
 import 'package:geniopay/app/shared/fonts.dart';
 import 'package:geniopay/app/shared/ui_helpers.dart';
+import 'package:geniopay/core/navigators/navigators.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -161,10 +162,18 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       TextBold('Recent transactions'),
                       const Spacer(),
-                      TextRegular(
-                        'View All',
-                        style: const TextStyle(
-                          textBaseline: TextBaseline.ideographic,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.activityScreen,
+                          );
+                        },
+                        child: TextRegular(
+                          'View All',
+                          style: const TextStyle(
+                            textBaseline: TextBaseline.ideographic,
+                          ),
                         ),
                       )
                     ],
@@ -190,16 +199,18 @@ class _HomePageState extends State<HomePage> {
 }
 
 class TransactionWidget extends StatelessWidget {
-  const TransactionWidget(
-      {Key? key,
-      required this.icon,
-      this.isCompleted = true,
-      required this.title})
-      : super(key: key);
+  const TransactionWidget({
+    Key? key,
+    required this.icon,
+    this.isCompleted = true,
+    this.haveDivider = true,
+    required this.title,
+  }) : super(key: key);
 
   final String icon;
   final String title;
   final bool isCompleted;
+  final bool haveDivider;
 
   @override
   Widget build(BuildContext context) {
@@ -241,32 +252,27 @@ class TransactionWidget extends StatelessWidget {
                 TextRegular(
                   isCompleted ? 'Completed' : 'In Progress',
                   fontSize: 10,
-                  color:
-                      isCompleted ? AppColors.green : const Color(0xffFB923C),
+                  color: isCompleted ? AppColors.green : const Color(0xffFB923C),
                 ),
               ],
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8),
-          child: Divider(
-            thickness: 2,
-            color: AppColors.backgroundColor,
+        if (haveDivider)
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8),
+            child: Divider(
+              thickness: 2,
+              color: AppColors.backgroundColor,
+            ),
           ),
-        ),
       ],
     );
   }
 }
 
 class CardWidget extends StatelessWidget {
-  const CardWidget(
-      {Key? key,
-      required this.background,
-      required this.image,
-      required this.text})
-      : super(key: key);
+  const CardWidget({Key? key, required this.background, required this.image, required this.text}) : super(key: key);
   final Color background;
   final String image;
   final String text;

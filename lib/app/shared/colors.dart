@@ -17,6 +17,7 @@ class AppColors {
   // text
   static const primaryTextColor = Color(0xff001b21);
   static const secondaryTextColor = Color(0xff939295);
+  static const titleColor = Color(0xff001B21);
 
   static const Map<int, Color> colorScratch = {
     50: Color.fromRGBO(7, 45, 114, .1),
@@ -46,15 +47,12 @@ class AppColors {
         backgroundColor: Colors.white.withOpacity(0.05),
       ),
       focusColor: backgroundColor,
-      bottomAppBarTheme:
-          BottomAppBarTheme(color: Colors.white.withOpacity(0.05)),
+      bottomAppBarTheme: BottomAppBarTheme(color: Colors.white.withOpacity(0.05)),
       backgroundColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
-            colorScheme: isDarkTheme
-                ? const ColorScheme.dark()
-                : const ColorScheme.light(),
+            colorScheme: isDarkTheme ? const ColorScheme.dark() : const ColorScheme.light(),
           ),
       appBarTheme: const AppBarTheme(
         elevation: 0,
