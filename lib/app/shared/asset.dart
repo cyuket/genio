@@ -9,6 +9,9 @@ class AppAsset {
   static const String send = 'assets/images/send.svg';
   static const String swap = 'assets/images/swap.svg';
   static const String more = 'assets/images/more.svg';
+  static const String about = 'assets/images/about.svg';
+  static const String download = 'assets/images/download.svg';
+  static const String upload = 'assets/images/upload.svg';
   static const String ball = 'assets/images/ball.svg';
   static const String spotify = 'assets/images/spotify.svg';
   static const String home = 'assets/images/home.svg';
@@ -19,6 +22,8 @@ class AppAsset {
   static const String geniopay = 'assets/images/geniopay.png';
   static const String menu = 'assets/images/menu.svg';
   static const String card = 'assets/images/card.svg';
+  static const String xmas = 'assets/images/xmas.svg';
+  static const String leaf = 'assets/images/leaf.svg';
   static const String recieve = 'assets/images/recieve.svg';
   static const String clothings = 'assets/images/clothings.png';
   static const String refer = 'assets/images/refer.png';

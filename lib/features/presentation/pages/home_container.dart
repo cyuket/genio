@@ -4,6 +4,7 @@ import 'package:geniopay/app/shared/asset.dart';
 import 'package:geniopay/app/widget/touchables/touchable_opacity.dart';
 import 'package:geniopay/features/presentation/pages/homepage.dart';
 import 'package:geniopay/features/presentation/pages/menu_page.dart';
+import 'package:geniopay/features/presentation/pages/wallet_page.dart';
 import 'package:geniopay/features/presentation/widget/navbar_widget.dart';
 
 class HomeContainer extends StatefulWidget {
@@ -43,7 +44,7 @@ class HomeContainerState extends State<HomeContainer> {
     final _widgetOptions = <Widget>[
       const HomePage(),
       Container(),
-      Container(),
+      const WalletPage(),
       const MenuPage(),
     ];
     return Scaffold(

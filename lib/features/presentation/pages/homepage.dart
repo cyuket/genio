@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Gap(40),
                   SizedBox(
-                    height: 170,
+                    height: 180,
                     width: double.infinity,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -252,7 +252,8 @@ class TransactionWidget extends StatelessWidget {
                 TextRegular(
                   isCompleted ? 'Completed' : 'In Progress',
                   fontSize: 10,
-                  color: isCompleted ? AppColors.green : const Color(0xffFB923C),
+                  color:
+                      isCompleted ? AppColors.green : const Color(0xffFB923C),
                 ),
               ],
             ),
@@ -272,7 +273,12 @@ class TransactionWidget extends StatelessWidget {
 }
 
 class CardWidget extends StatelessWidget {
-  const CardWidget({Key? key, required this.background, required this.image, required this.text}) : super(key: key);
+  const CardWidget(
+      {Key? key,
+      required this.background,
+      required this.image,
+      required this.text})
+      : super(key: key);
   final Color background;
   final String image;
   final String text;
@@ -284,7 +290,7 @@ class CardWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         width: 150,
-        height: 119,
+        height: 130,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: background,
@@ -313,9 +319,11 @@ class HomePayoutWidget extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.text,
+    this.color = AppColors.backgroundColor,
   }) : super(key: key);
   final String icon;
   final String text;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -323,7 +331,7 @@ class HomePayoutWidget extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 30,
-          backgroundColor: AppColors.backgroundColor,
+          backgroundColor: color,
           child: Center(
             child: SvgPicture.asset(icon),
           ),
